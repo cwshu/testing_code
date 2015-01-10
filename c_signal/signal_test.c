@@ -1,7 +1,7 @@
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <cerrno>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <errno.h>
 
 #include <unistd.h>
 #include <signal.h>
@@ -30,6 +30,7 @@ int main(int argc, char *argv[]){
     sa.sa_handler = sigchid_waitfor_child;
     /* signal interrupt system call and library call. (restart call after signal handler) */
     sa.sa_flags |= SA_RESTART; 
+    /* prevent child process becoming zombie process without waiting child */
     sa.sa_flags |= SA_NOCLDWAIT; 
 
     if( sigaction(SIGCHLD, &sa, NULL) == -1 ){
