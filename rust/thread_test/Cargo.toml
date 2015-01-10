@@ -1,0 +1,5 @@
+[package]
+
+name = "thread_test"
+version = "0.0.1"
+authors = ["susu <u1240976@gmail.com>"]
