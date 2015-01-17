@@ -1,0 +1,36 @@
+::
+
+    # Basic usage
+
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-g", "--general", action="store_true")
+
+    if len(sys.argv) == 1: # no arguments
+        args_parser.print_help()
+
+- argparse.ArgumentParser()
+
+  - positional argument
+  - optional argument
+  - mutually_exclusive_group
+
+- add_argument()
+
+  - "-h", "--help"
+  - help="help message"
+  - action="store" # store to variable
+  - default # default value of argument
+  - dest
+  - type=int # restrict argument type
+  - choice=[1, 2, 3] # restrict argument value
+
+- [ret ArgumentParser()] add_subparsers()
+
+- [ret add_subparsers()] add_parser()
+
+- [ret ArgumentParser()] add_mutually_exclusive_group()
+
+- set_defaults()
+
+  - 應該是不加任何 option 的情況
