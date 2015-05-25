@@ -31,6 +31,17 @@ compare fork and pthread in system call
 ``fork()`` and ``pthread_create()`` both use ``clone()`` system call with different flags.
 ``clone()`` copy the task and clone flags decide what resource parent and child will share.
 
+- flags
+
+  - ``CLONE_VM``: share address space.
+  - ``CLONE_FILES``: share open files (file descriptors).
+  - ``CLONE_SIGHAND``: share signal handlers.
+  - ``CLONE_FS``: share filesystem information?
+  - ``CLONE_SETTLS``: [not share] Create a new TLS (thread-local storage) for the child.
+  - ``CLONE_SYSVSEM``: share System V SEM_UNDO semantics?
+  - ``CLONE_PARENT_SETTID``, ``CLONE_CHILD_SETTID``: [not share] Set the TID in the parent/child?
+  - ``CLONE_CHILD_CLEARTID``: [not share] Clear the TID in the child?
+
 reference
 ---------
 - `LKD 2nd - Linux Implementation of Thread <http://www.makelinux.net/books/lkd2/ch03lev1sec3>`_
