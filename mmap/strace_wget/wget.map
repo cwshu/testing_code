@@ -1,0 +1,55 @@
+3126:   /usr/bin/wget https://www.google.com -O tmp.html
+0000000000400000    400K r-x-- wget
+0000000000663000      4K r---- wget
+0000000000664000     12K rw--- wget
+0000000000667000   2268K rw---   [ anon ]
+00007ffff6225000   4356K r---- locale-archive
+00007ffff6666000     12K r-x-- libdl-2.22.so
+00007ffff6669000   2044K ----- libdl-2.22.so
+00007ffff6868000      4K r---- libdl-2.22.so
+00007ffff6869000      4K rw--- libdl-2.22.so
+00007ffff686a000     96K r-x-- libpthread-2.22.so
+00007ffff6882000   2044K ----- libpthread-2.22.so
+00007ffff6a81000      4K r---- libpthread-2.22.so
+00007ffff6a82000      4K rw--- libpthread-2.22.so
+00007ffff6a83000     16K rw---   [ anon ]
+00007ffff6a87000   1644K r-x-- libc-2.22.so
+00007ffff6c22000   2044K ----- libc-2.22.so
+00007ffff6e21000     16K r---- libc-2.22.so
+00007ffff6e25000      8K rw--- libc-2.22.so
+00007ffff6e27000     16K rw---   [ anon ]
+00007ffff6e2b000    200K r-x-- libidn.so.11.6.15
+00007ffff6e5d000   2048K ----- libidn.so.11.6.15
+00007ffff705d000      4K r---- libidn.so.11.6.15
+00007ffff705e000      4K rw--- libidn.so.11.6.15
+00007ffff705f000     84K r-x-- libz.so.1.2.8
+00007ffff7074000   2044K ----- libz.so.1.2.8
+00007ffff7273000      4K r---- libz.so.1.2.8
+00007ffff7274000      4K rw--- libz.so.1.2.8
+00007ffff7275000   2356K r-x-- libcrypto.so.1.0.0
+00007ffff74c2000   2044K ----- libcrypto.so.1.0.0
+00007ffff76c1000    112K r---- libcrypto.so.1.0.0
+00007ffff76dd000     48K rw--- libcrypto.so.1.0.0
+00007ffff76e9000     12K rw---   [ anon ]
+00007ffff76ec000    444K r-x-- libssl.so.1.0.0
+00007ffff775b000   2044K ----- libssl.so.1.0.0
+00007ffff795a000     20K r---- libssl.so.1.0.0
+00007ffff795f000     28K rw--- libssl.so.1.0.0
+00007ffff7966000     16K r-x-- libuuid.so.1.3.0
+00007ffff796a000   2044K ----- libuuid.so.1.3.0
+00007ffff7b69000      4K r---- libuuid.so.1.3.0
+00007ffff7b6a000      4K rw--- libuuid.so.1.3.0
+00007ffff7b6b000    440K r-x-- libpcre.so.1.2.5
+00007ffff7bd9000   2048K ----- libpcre.so.1.2.5
+00007ffff7dd9000      4K r---- libpcre.so.1.2.5
+00007ffff7dda000      4K rw--- libpcre.so.1.2.5
+00007ffff7ddb000    136K r-x-- ld-2.22.so
+00007ffff7fb7000     28K rw---   [ anon ]
+00007ffff7ff8000      8K r----   [ anon ]
+00007ffff7ffa000      8K r-x--   [ anon ]
+00007ffff7ffc000      4K r---- ld-2.22.so
+00007ffff7ffd000      4K rw--- ld-2.22.so
+00007ffff7ffe000      4K rw---   [ anon ]
+00007ffffffde000    132K rw---   [ stack ]
+ffffffffff600000      4K r-x--   [ anon ]
+ total            31388K
