@@ -4,6 +4,18 @@ process in memory experiment
 
 程式碼請見 ``process_in_memory.c``, ``process_in_memory_lib.c``
 
+running
+-------
+::
+
+    make all               # build executable and shared library
+    LD_LIBRARY_PATH=`pwd`  # use shared library in this directory.
+    ./process_in_memory    # run experiment
+    cat /proc/`pgrep process`/maps  # print procfs map
+
+result
+------
+
 process output::
 
     > ./process_in_memory 
