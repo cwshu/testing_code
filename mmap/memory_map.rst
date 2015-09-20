@@ -1,3 +1,35 @@
+Memory Map
+==========
+
+4 types of memory map
+---------------------
+- MAP_SHARED
+
+  - traditional memory map: when writing to memory, the modification will be written to the file, and be synchronized to memory mapping of same file by other processes.
+
+- MAP_PRIVATE
+
+  - private CoW memory map: when writing to memory, copying new memory page for dirty region
+
+    - modification won't be written to the file, and won't be synchronized to memory mapping of same file other processes'.
+    - used by loading shared library 
+
+- MAP_ANONYMOUS
+
+  - just allocate a memory page filled with zero
+  - used by BSS segment and mallocing large memory ()
+  - malloc(brk + mmap)
+
+    - http://reborn2266.blogspot.tw/2011/11/linux-user-space.html
+
+- MAP_GROWSDOWN
+
+  - used by stack.
+  - http://unix.stackexchange.com/questions/63742/what-is-automatic-stack-expansion/79256#79256
+
+Misc
+----
+
 - mmap syscall
   
   - ``void *mmap(void *addr, size_t length, int prot, int flags, int fd, off_t offset)``
@@ -7,14 +39,7 @@
   - prot: memory protection of the mapping(not conflict with open mode of file)
     - r/w/x, NONE(not be accessed)
   - flags  
-    - MAP_ANONYMOUS: not map any file, content initial to zero.
-    - MAP_SHARED/MAP_PRIVATE
-      - share: memory modification will be written back to file.
-        - msync
-      - private: private CoW mapping
     - MAP_FIXED: 強迫用 addr, length 去 map, 有 overlap 則蓋掉原本的 page, 如果無法使用 addr, length 則 failed
-    - MAP_GROWSDOWN: 給 stack 用的 
-
     - MAP_HUGETLB
 
 - ideas
