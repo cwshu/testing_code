@@ -32,11 +32,18 @@ process output::
     [stack] 0x00007ffc8b2efc10
     [heap]  0x0000000001b0b420
 
-procfs map(為了方便觀看, 程式 output 中有出現的區段加上 ``!`` 標注)::
+procfs maps::
+
+    # 為了方便觀看:
+    # 1. 將程式 output 中有出現的區段加上 ! 標注
+    # 2. 將 virtual address 不連續的區段們多換一行隔開
 
     ! 00400000-00401000 r-xp 00000000 08:06 2561888                            /home/susu/testing_code/mmap/process_in_memory/process_in_memory
+
     ! 00600000-00601000 rw-p 00000000 08:06 2561888                            /home/susu/testing_code/mmap/process_in_memory/process_in_memory
+
     ! 01b0b000-01b2c000 rw-p 00000000 00:00 0                                  [heap]
+
     7faaee3ef000-7faaee58a000 r-xp 00000000 08:06 8783585                    /usr/lib/libc-2.22.so
     7faaee58a000-7faaee789000 ---p 0019b000 08:06 8783585                    /usr/lib/libc-2.22.so
     7faaee789000-7faaee78d000 r--p 0019a000 08:06 8783585                    /usr/lib/libc-2.22.so
@@ -46,12 +53,23 @@ procfs map(為了方便觀看, 程式 output 中有出現的區段加上 ``!`` �
     7faaee794000-7faaee993000 ---p 00001000 08:06 2561891                    /home/susu/testing_code/mmap/process_in_memory/libpim.so.1.0.0
     ! 7faaee993000-7faaee994000 rw-p 00000000 08:06 2561891                    /home/susu/testing_code/mmap/process_in_memory/libpim.so.1.0.0
     7faaee994000-7faaee9b6000 r-xp 00000000 08:06 8783474                    /usr/lib/ld-2.22.so
+
     7faaeeb77000-7faaeeb7a000 rw-p 00000000 00:00 0 
+
     7faaeebb2000-7faaeebb5000 rw-p 00000000 00:00 0 
     7faaeebb5000-7faaeebb6000 r--p 00021000 08:06 8783474                    /usr/lib/ld-2.22.so
     7faaeebb6000-7faaeebb7000 rw-p 00022000 08:06 8783474                    /usr/lib/ld-2.22.so
     7faaeebb7000-7faaeebb8000 rw-p 00000000 00:00 0 
+
     ! 7ffc8b2d8000-7ffc8b2f9000 rw-p 00000000 00:00 0                          [stack]
+
     7ffc8b37a000-7ffc8b37c000 r--p 00000000 00:00 0                          [vvar]
     7ffc8b37c000-7ffc8b37e000 r-xp 00000000 00:00 0                          [vdso]
+
     ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+some material
+-------------
+.. image:: linuxFlexibleAddressSpaceLayout.png
+
+- Anatomy of a Program in Memory: http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/
