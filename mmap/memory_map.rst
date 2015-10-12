@@ -30,6 +30,8 @@ Memory Map
 More to read
 ------------
 - LDD 3rd ch15 Memory Mapping and DMA: https://lwn.net/images/pdf/LDD3/ch15.pdf
+- What a C programmer should know about memory: http://marek.vavrusa.com/c/memory/2015/02/20/memory/
+- http://duartes.org/gustavo/blog/post/how-the-kernel-manages-your-memory/
 
 Misc
 ----
