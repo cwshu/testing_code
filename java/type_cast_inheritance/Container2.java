@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 
-public class Container {
+/* use instanceof operator to check object type instead of Enum */
+public class Container2 {
     ArrayList<Element> data_list = new ArrayList<Element>();
 
-    public Container(){
+    public Container2(){
         return;
     }
 
@@ -11,15 +12,15 @@ public class Container {
         // type casting in inheritance: http://stackoverflow.com/a/20097325
         int sum = 0;
         for (Element element : data_list) {
-            if (element.type == ElementType.INT) {
+            if (element instanceof ElementInt) {
                 ElementInt element1 = (ElementInt) element;
                 sum += element1.data;
             }
-            else if (element.type == ElementType.DOUBLE) {
+            else if (element instanceof ElementDouble) {
                 ElementDouble element1 = (ElementDouble) element;
                 sum += element1.data;
             }
-            else if (element.type == ElementType.STRING) {
+            else if (element instanceof ElementString) {
                 ElementString element1 = (ElementString) element;
                 sum += element1.data.length();
             }
@@ -29,7 +30,7 @@ public class Container {
 
     /* testing code of module Container */
     static public void main(String args[]){
-        Container c1 = new Container();
+        Container2 c1 = new Container2();
         ElementInt e1 = new ElementInt(2);
         ElementDouble e2 = new ElementDouble(4.0);
         ElementString e3 = new ElementString("hello world");
@@ -41,24 +42,14 @@ public class Container {
         System.out.println(c1.sum());
         return;
     }
-
-}
-
-enum ElementType {
-    NONE, INT, DOUBLE, STRING
 }
 
 class Element {
-    ElementType type;    
-    public Element(ElementType type){
-        this.type = type;
-    }
 }
 
 class ElementInt extends Element {
     int data;
     ElementInt(int data){
-        super(ElementType.INT);
         this.data = data;
     }
 }
@@ -66,7 +57,6 @@ class ElementInt extends Element {
 class ElementDouble extends Element {
     double data;
     ElementDouble(double data){
-        super(ElementType.DOUBLE);
         this.data = data;
     }
 }
@@ -74,7 +64,6 @@ class ElementDouble extends Element {
 class ElementString extends Element{
     String data;
     ElementString(String data){
-        super(ElementType.STRING);
         this.data = data;
     }
 }
