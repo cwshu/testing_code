@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
-/* use instanceof operator to check object type instead of Enum */
+/* use instanceof operator to check object type instead of Enum 
+ * tutorial of instanceof: https://docs.oracle.com/javase/tutorial/java/nutsandbolts/op2.html
+ */
 public class Container2 {
     ArrayList<Element> data_list = new ArrayList<Element>();
 
